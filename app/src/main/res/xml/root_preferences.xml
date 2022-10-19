@@ -1,0 +1,57 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="GILADAS">
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="cuit"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Numero de cuit" />
+        <EditTextPreference
+            android:defaultValue="true"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Correo Electronico"
+            app:key="mail" />
+        <ListPreference
+            android:defaultValue="true"
+            android:entries="@array/metodos_pago"
+            android:entryValues="@array/valores_medios"
+            android:key="list_preference_1"
+            android:title="Medio de pago" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:shouldDisableView="false"
+        android:title="Efectivo"
+        app:shouldDisableView="false">
+
+        <ListPreference
+            android:defaultValue="true"
+            android:entries="@array/monedas"
+            android:entryValues="@array/valores_moneda"
+            android:key="list_preference_2"
+            android:shouldDisableView="true"
+            android:title="Tipo moneda"
+            app:shouldDisableView="true" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="otras opciones">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="Recibir Notificaciones" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="check_box_preference_1"
+            android:title="Permitir guardar informacion" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Navegar log">
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

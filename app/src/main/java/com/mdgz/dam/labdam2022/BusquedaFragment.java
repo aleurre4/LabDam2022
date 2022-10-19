@@ -49,11 +49,8 @@ public class BusquedaFragment extends Fragment {
     binding.buttonBuscar.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
             NavHostFragment.findNavController(BusquedaFragment.this)
                     .navigate(R.id.action_busquedaFragment_to_resultadoBusquedaFragment);
-
-
         }
     });
 
