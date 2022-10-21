@@ -25,12 +25,11 @@
 
         <activity
             android:name=".SettingsActivity"
-            android:exported="true">
-            <intent-filter>
+            android:exported="true"
+            android:parentActivityName=".MainActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" > </meta-data>
 
-            </intent-filter>
         </activity>
 
     </application>

@@ -45,7 +45,7 @@
             app:title="Recibir Notificaciones" />
         <CheckBoxPreference
             android:defaultValue="false"
-            android:key="check_box_preference_1"
+            android:key="log"
             android:title="Permitir guardar informacion" />
 
     </PreferenceCategory>

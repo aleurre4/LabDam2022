@@ -38,4 +38,11 @@
             android:id="@+id/action_detalleAlojamientoFragment_to_resultadoBusquedaFragment"
             app:destination="@id/resultadoBusquedaFragment" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/fragmentoLogBusqueda"
+        android:name="com.mdgz.dam.labdam2022.FragmentoLogBusqueda"
+        android:label="fragment_log"
+        tools:layout="@layout/fragment_log" />
 </navigation>

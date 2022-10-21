@@ -20,4 +20,8 @@
         android:id="@+id/itemConfiguracion"
         android:icon="@drawable/baseline_settings_white_24dp"
         android:title="Configuracion" />
+    <item
+        android:id="@+id/itemLog"
+        android:icon="@drawable/baseline_settings_white_24dp"
+        android:title="Ver Log de busqueda" />
 </menu>

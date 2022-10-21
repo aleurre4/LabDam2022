@@ -10,14 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mdgz.dam.labdam2022.model.Alojamiento;
 
 import java.util.List;
-
-import javax.xml.transform.Result;
 
 public class AlojamientosRecycleAdapter extends RecyclerView.Adapter<AlojamientosRecycleAdapter.AlojamientoViewHolder> {
 
@@ -37,7 +34,7 @@ public class AlojamientosRecycleAdapter extends RecyclerView.Adapter<Alojamiento
         public AlojamientoViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            card = itemView.findViewById(R.id.cardAlojamientos);
+            card = itemView.findViewById(R.id.cardLog);
             titulo = itemView.findViewById(R.id.textAlojamiento);
             button = itemView.findViewById(R.id.buttonMasDetalles);
 
