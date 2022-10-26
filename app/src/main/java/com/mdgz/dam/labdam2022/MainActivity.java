@@ -21,6 +21,8 @@ import com.mdgz.dam.labdam2022.databinding.ActivityMainBinding;
 import com.mdgz.dam.labdam2022.repo.BusquedaLogRespository;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,9 +75,10 @@ public class MainActivity extends AppCompatActivity {
             item.setVisible(true);
 
             if (!archivo.exists()) {
+                System.out.println("NO EXISTEE");
                 try {
-                    File file = new File("/data/user/0/com.mdgz.dam.labdam2022/files/", "busquedas" + ".json");
-                    file.createNewFile();
+//                    File file = new File("/data/user/0/com.mdgz.dam.labdam2022/files/", "busquedas.json");
+                    archivo.createNewFile();
 
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
@@ -83,12 +86,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            BusquedaLogRespository rep = new BusquedaLogRespository(this);
+//            BusquedaLogRespository rep = new BusquedaLogRespository(this);
 
         } else {
 
            if (archivo.exists()) {
-                archivo.delete();
+
+               BusquedaLogRespository repositorio =  new BusquedaLogRespository(this);
+               repositorio.eliminarTodos();
+              System.out.println("HOLAAA");
             }
            item.setVisible(false);
         }

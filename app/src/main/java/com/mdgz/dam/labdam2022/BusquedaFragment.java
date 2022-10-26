@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 
 import com.mdgz.dam.labdam2022.databinding.FragmentBusquedaBinding;
 import com.mdgz.dam.labdam2022.model.BusquedaLog;
@@ -74,7 +75,8 @@ public class BusquedaFragment extends Fragment {
         String currentDateandTime = simpleDateFormat.format(new Date());
 
 try{
-        log.setId(1);
+
+    log.setId(1);
         log.setHora(currentDateandTime);
         log.setCantidadPersonas(Integer.parseInt(binding.editTextCantidad.getText().toString()));
         log.setTipo(binding.spinnerTipo.getSelectedItem().toString());
@@ -82,7 +84,7 @@ try{
         log.setPrecioMin(binding.editMin.getText().toString());
         log.setPrecioMax(binding.editMax.getText().toString());
         log.setCantidadResultados(2);
-        log.setWifi(binding.checkWifi.createAccessibilityNodeInfo().isChecked());
+        log.setWifi(binding.wiFi.isChecked());
         BusquedaLogRespository repositorio =  new BusquedaLogRespository(this.getContext());
         repositorio.agregar(log);}
 catch(Exception e){

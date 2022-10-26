@@ -71,7 +71,7 @@ public class BusquedaLogRespository {
                 log.loadFromJson(fila);
                 REPOSITORIOLOG.add(log);
             }
-        } catch (JSONException e) {e.printStackTrace();}
+        } catch (JSONException e) {System.out.println("CARGAR LISTA " + e.getMessage()); }
     }
     private void guardarLista(){
         JSONArray arregloBusquedaLogs = new JSONArray();
@@ -88,7 +88,8 @@ public class BusquedaLogRespository {
             fos.write(arregloBusquedaLogs.toString().getBytes());
             fos.close();
         } catch (FileNotFoundException e) {e.printStackTrace();}
-        catch (IOException e) { e.printStackTrace();}
+        catch (IOException e) {
+            System.out.println("ESCRIBIR ARCHIVO " + e.getMessage());  }
     }
 
     private String leerDeArchivo(){
@@ -102,11 +103,13 @@ public class BusquedaLogRespository {
             while ((line = buffRdr.readLine()) != null) { sb.append(line); }
             fis.close();
         } catch (FileNotFoundException e) {e.printStackTrace();}
-        catch (IOException e) { e.printStackTrace(); }
+        catch (IOException e) { System.out.println("LEER ARCHIVO " + e.getMessage());  }
         return sb.toString();
     }
 
 
-
-
+    public void eliminarTodos() {
+        REPOSITORIOLOG.clear();
+        guardarLista();
+    }
 }
