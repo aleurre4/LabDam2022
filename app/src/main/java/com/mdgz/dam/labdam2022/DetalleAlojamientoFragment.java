@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mdgz.dam.labdam2022.bdd.pojo.AlojamientoPojo;
 import com.mdgz.dam.labdam2022.databinding.FragmentDetalleAlojamientoBinding;
 import com.mdgz.dam.labdam2022.databinding.FragmentResultadoBusquedaBinding;
 import com.mdgz.dam.labdam2022.model.Alojamiento;
@@ -39,14 +40,15 @@ public class DetalleAlojamientoFragment extends Fragment {
         binding = FragmentDetalleAlojamientoBinding.inflate(inflater,container,false);
 
         Integer id = getArguments().getInt("id");
-        Alojamiento a = getAlojamiento(id);
+        AlojamientoPojo a = getAlojamiento(id);
         precioBase = a.getPrecioBase();
         binding.tituloAlojamiento.setText(a.getTitulo());
         binding.textDescripcion.setText(a.getDescripcion());
         binding.textCapacidad.setText("Capacidad: " + a.getCapacidad());
         binding.textPrecio.setText("Precio Base: " + precioBase);
        try {
-           binding.textUbicacion.setText("Ubicaion: " + a.getUbicacion().toString());
+//           binding.textUbicacion.setText("Ubicaion: " + a.getUbicacion().toString());
+           binding.textUbicacion.setText("Ubicaion: " + "Ni idea perri");
        }catch (Exception e )
        {
            binding.textUbicacion.setText("Ubicaion: " + "Ni idea perri");
@@ -64,10 +66,10 @@ public class DetalleAlojamientoFragment extends Fragment {
 
     }
 
-    private Alojamiento getAlojamiento(Integer id){
+    private AlojamientoPojo getAlojamiento(Integer id){
 
 
-        for(Alojamiento a: AlojamientoRepository._ALOJAMIENTOS){
+        for(AlojamientoPojo a: ResultadoBusquedaFragment.getAlojamientos()){
 
             if(a.getId()==id){
                 return a;

@@ -17,12 +17,16 @@ import android.view.View;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.divider.MaterialDividerItemDecoration;
+import com.mdgz.dam.labdam2022.bdd.AppDatabase;
+import com.mdgz.dam.labdam2022.bdd.pojo.AlojamientoPojo;
 import com.mdgz.dam.labdam2022.databinding.ActivityMainBinding;
+import com.mdgz.dam.labdam2022.repo.AlojamientoRepository;
 import com.mdgz.dam.labdam2022.repo.BusquedaLogRespository;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,7 +52,16 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-
+//        Executors.newSingleThreadExecutor().execute(new Runnable() {
+//                            @Override
+//                            public void run() {
+//
+//                                for(AlojamientoPojo a : AlojamientoRepository.populateData()) {
+//                                    AppDatabase.getInstance(getApplicationContext()).alojamientoDAO().insert(a);
+//                                }
+//
+//                            }
+//                        });
     }
 
     @Override

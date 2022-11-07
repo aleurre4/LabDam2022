@@ -1,41 +1,36 @@
-package com.mdgz.dam.labdam2022.model;
+package com.mdgz.dam.labdam2022.bdd.pojo;
 
 
+import androidx.annotation.NonNull;
+import androidx.room.*;
 
-public abstract class Alojamiento {
+@Entity(tableName = "alojamientos")
+public class AlojamientoPojo {
 
-    protected Integer id;
 
-    protected String titulo;
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "id_alojamiento")
+    Integer id;
 
-    protected String descripcion;
+    @ColumnInfo(name = "titulo")
+    String titulo;
 
-    protected Integer capacidad;
+    @ColumnInfo(name = "descripcion")
+    String descripcion;
 
-    protected Double precioBase;
+    @ColumnInfo(name = "capacidad")
+    Integer capacidad;
 
-    public abstract Ubicacion getUbicacion();
-    public Double costoDia(){
-        return precioBase;
-    }
+    @ColumnInfo(name = "precio_base")
+    Double precioBase;
 
-    public Alojamiento(){
-        super();
-    }
-
-    public Alojamiento(Integer id, String titulo, String descripcion, Integer capacidad, Double precioBase) {
-        this.id = id;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.capacidad = capacidad;
-        this.precioBase = precioBase;
-    }
-
+    @NonNull
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(@NonNull Integer id) {
         this.id = id;
     }
 

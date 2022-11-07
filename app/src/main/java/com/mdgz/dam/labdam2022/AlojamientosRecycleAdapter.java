@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mdgz.dam.labdam2022.bdd.pojo.AlojamientoPojo;
 import com.mdgz.dam.labdam2022.model.Alojamiento;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class AlojamientosRecycleAdapter extends RecyclerView.Adapter<Alojamiento
 
 
 
-    private List<Alojamiento> mDataSet;
-    public AlojamientosRecycleAdapter(List<Alojamiento> myDataSet){
+    private List<AlojamientoPojo> mDataSet;
+    public AlojamientosRecycleAdapter(List<AlojamientoPojo> myDataSet){
 
         this.mDataSet = myDataSet;
 
@@ -62,7 +63,7 @@ public class AlojamientosRecycleAdapter extends RecyclerView.Adapter<Alojamiento
         holder.titulo.setTag(position);
         holder.card.setTag(position);
         holder.button.setTag(position);
-        Alojamiento a = mDataSet.get(position);
+        AlojamientoPojo a = mDataSet.get(position);
 
         holder.titulo.setText(a.getTitulo());
 

@@ -1,11 +1,13 @@
 package com.mdgz.dam.labdam2022.repo;
 
+import com.mdgz.dam.labdam2022.bdd.pojo.AlojamientoPojo;
 import com.mdgz.dam.labdam2022.model.Alojamiento;
 import com.mdgz.dam.labdam2022.model.Departamento;
 import com.mdgz.dam.labdam2022.model.Habitacion;
 import com.mdgz.dam.labdam2022.model.Hotel;
 import com.mdgz.dam.labdam2022.model.Ubicacion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlojamientoRepository {
@@ -21,4 +23,52 @@ public class AlojamientoRepository {
     public List<Alojamiento> listaCiudades(){
         return  _ALOJAMIENTOS;
     }
+
+
+    public static List<AlojamientoPojo> populateData(){
+
+
+      ArrayList<AlojamientoPojo> lista = new ArrayList<>();
+//
+//        AlojamientoPojo a =  new AlojamientoPojo();
+//        a.setId(1);
+//        a.setDescripcion("Alojamiento numero 1");
+//        a.setTitulo("Nombre primer alojamiento");
+//        a.setPrecioBase(100.00);
+//        a.setCapacidad(5);
+//
+//        AlojamientoPojo b =  new AlojamientoPojo();
+//        b.setId(2);
+//        b.setDescripcion("Alojamiento numero 2");
+//        b.setTitulo("Nombre segundo alojamiento");
+//        b.setPrecioBase(200.00);
+//        b.setCapacidad(6);
+//
+//
+//        AlojamientoPojo c =  new AlojamientoPojo();
+//        c.setId(3);
+//        c.setDescripcion("Alojamiento numero 3");
+//        c.setTitulo("Nombre tercer alojamiento");
+//        c.setPrecioBase(300.00);
+//        c.setCapacidad(7);
+//
+        AlojamientoPojo d =  new AlojamientoPojo();
+        d.setId(5);
+        d.setDescripcion("Una casa hecha para programadores de alto calibre");
+        d.setTitulo("La viviendo de Elias");
+        d.setPrecioBase(500.00);
+        d.setCapacidad(4);
+
+
+//        lista.add(a);
+//        lista.add(b);
+//        lista.add(c);
+        lista.add(d);
+
+
+        return lista;
+    }
+
+
+
 }
